@@ -1,0 +1,65 @@
+{
+	"contentManagement": [
+		{
+			"title": "试题管理",
+			"icon": "icon-text",
+			"href": "page/news/newsList.html",
+			"spread": false
+		},
+		{
+			"title": "考试记录",
+			"icon": "&#xe634;",
+			"href": "page/news/history.html",
+			"spread": false
+		},{
+			"title": "在线考试",
+			"icon": "icon-clock",
+			"href": "page/news/examInit.html",
+			"spread": false
+		},
+		{
+			"title": "其他页面",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "404页面",
+					"icon": "&#xe61c;",
+					"href": "page/404.html",
+					"spread": false
+				},
+				{
+					"title": "登录",
+					"icon": "&#xe609;",
+					"href": "page/login/login.html",
+					"spread": false,
+					"target": "_blank"
+				}
+			]
+		}
+	],
+	"memberCenter": [
+		{
+			"title": "用户中心",
+			"icon": "&#xe612;",
+			"href": "page/user/userList.html",
+			"spread": false
+		}
+	],
+	"systemeSttings": [
+		{
+			"title": "系统基本参数",
+			"icon": "&#xe631;",
+			"href": "page/systemSetting/basicParameter.html",
+			"spread": false
+		},{
+			"title": "系统日志",
+			"icon": "icon-log",
+			"href": "page/systemSetting/logs.html",
+			"spread": false
+		}
+	]
+}
+
+
