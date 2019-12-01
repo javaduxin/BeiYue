@@ -1,4 +1,4 @@
 package com.prj.entity;
 
-public class User {
+public class User  {
 }

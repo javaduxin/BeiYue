@@ -1,4 +1,4 @@
 package com.prj.server.user;
 
-public interface UserServer {
+public interface  UserServer {
 }

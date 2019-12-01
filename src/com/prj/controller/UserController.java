@@ -1,4 +1,4 @@
 package com.prj.controller;
 
-public class UserController {
+public class UserController  {
 }
