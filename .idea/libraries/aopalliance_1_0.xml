@@ -18,6 +18,12 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/mybatis-3.2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/mybatis-spring-1.2.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.25-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/poi-3.9-20121203.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/poi-examples-3.9-20121203.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/poi-excelant-3.9-20121203.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/poi-ooxml-3.9-20121203.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/poi-ooxml-schemas-3.9-20121203.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/poi-scratchpad-3.9-20121203.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-aop-4.3.18.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-beans-4.3.18.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-context-4.3.18.RELEASE.jar!/" />
@@ -29,6 +35,7 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/standard.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/validation-api-1.0.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xmlbeans-2.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

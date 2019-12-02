@@ -7,8 +7,8 @@
           <element id="module-output" name="BeiYue" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="aopalliance-1.0" />
           <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="aopalliance-1.0" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="BeiYue/web/Web" />

@@ -18,4 +18,6 @@
     <mvc:resources mapping="/css/**" location="/css/" />
     <mvc:resources mapping="/js/**" location="/js/" />
     <mvc:resources mapping="/json/**" location="/json/" />
+    <mvc:resources mapping="/page/**" location="/page/" />
+    <mvc:resources mapping="/images/**" location="/images/" />
 </beans>
