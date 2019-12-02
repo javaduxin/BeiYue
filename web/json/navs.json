@@ -1,42 +1,40 @@
 {
 	"contentManagement": [
 		{
-			"title": "试题管理",
+			"title": "编辑商家",
 			"icon": "icon-text",
 			"href": "page/news/newsList.html",
 			"spread": false
 		},
 		{
-			"title": "考试记录",
+			"title": "商家查询",
 			"icon": "&#xe634;",
 			"href": "page/news/history.html",
 			"spread": false
 		},{
-			"title": "在线考试",
+			"title": "账单管理",
 			"icon": "icon-clock",
 			"href": "page/news/examInit.html",
 			"spread": false
 		},
 		{
-			"title": "其他页面",
+			"title": "系统广告设置",
 			"icon": "&#xe630;",
 			"href": "",
+			"spread": false
+		},
+		{
+			"title": "404页面",
+			"icon": "&#xe61c;",
+			"href": "page/404.html",
+			"spread": false
+		},
+		{
+			"title": "登录",
+			"icon": "&#xe609;",
+			"href": "page/login/login.html",
 			"spread": false,
-			"children": [
-				{
-					"title": "404页面",
-					"icon": "&#xe61c;",
-					"href": "page/404.html",
-					"spread": false
-				},
-				{
-					"title": "登录",
-					"icon": "&#xe609;",
-					"href": "page/login/login.html",
-					"spread": false,
-					"target": "_blank"
-				}
-			]
+			"target": "_blank"
 		}
 	],
 	"memberCenter": [
