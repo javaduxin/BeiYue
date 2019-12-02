@@ -63,7 +63,7 @@
           <a href="javascript:;"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
         </li>
         <li class="layui-nav-item" id="userInfo">
-          <a href="javascript:;"><img src="images/git.png" class=" userAvatar" width="35" height="35"><cite class="adminName"></cite></a>
+          <a href="javascript:;"><img src="images/face.jpg" class=" userAvatar" width="35" height="35"><cite class="adminName"></cite></a>
           <dl class="layui-nav-child">
             <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
             <dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
@@ -80,7 +80,7 @@
   <div class="layui-side layui-bg-black">
     <div class="user-photo">
       <a class="img" title="我的头像" ><img src="images/face.jpg" class="userAvatar"></a>
-      <p>你好！, 欢迎登录</p>
+      <p>你好！欢迎登录</p>
     </div>
     <!-- 搜索 -->
     <div class="layui-form component">
