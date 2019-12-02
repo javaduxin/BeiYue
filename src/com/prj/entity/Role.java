@@ -5,7 +5,6 @@ public class Role {
     private int id;
     private String rname;
 
-
     public int getId() {
         return id;
     }

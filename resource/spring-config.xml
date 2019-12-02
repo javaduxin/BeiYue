@@ -47,5 +47,4 @@
         <property name="basePackage" value="com.prj.mapper"></property>
     </bean>
 
-
 </beans>

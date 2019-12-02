@@ -16,7 +16,6 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
     <!-- spring解决中文乱码	 -->
     <!-- spring字符编码过滤器start-->
     <filter>

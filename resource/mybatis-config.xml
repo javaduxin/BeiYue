@@ -9,5 +9,4 @@
     <typeAliases>
         <package name="com.prj.entity"></package>
     </typeAliases>
-
 </configuration>

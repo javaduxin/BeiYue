@@ -14,6 +14,7 @@ public class UserServerImpl implements UserServer {
     public UserMapper getUserMapper() {
         return userMapper;
     }
+
     public void setUserMapper(UserMapper userMapper) {
         this.userMapper = userMapper;
     }
