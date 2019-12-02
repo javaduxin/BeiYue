@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	</head>
+	<body>
+		<script type="text/javascript" src="setting.js"> </script>
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>系统广告栏设置</legend>
+</fieldset>
+ 
+    <div class="layui-upload">
+        <label class="layui-form-label">
+上传图片</label>
+        <div class="layui-input-block">
+            <!-- 上传按钮 -->
+            <button type="button" class="layui-btn" id="test1">上传图片</button>
+            <!-- 隐藏的input -->
+            <input type="hidden" id="msgImgs" name="msgImgs" value=""/>
+            <!-- 预览区域 -->
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo1">
+                <p id="demoText"></p>
+            </div>
+        </div>
+    </div>
+   
+    <form class="layui-form" action="">
+    	<div class="layui-form-item">
+    <label class="layui-form-label">广告输入：</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入广告文字" class="layui-input">
+    </div>
+  </div>
+  <label class="layui-form-label">广告跳转商户地址：</label>
+  <div class="layui-input-block">
+  	
+  	<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入商户地址" class="layui-input">
+  </div>
+	<br />
+  <div align="right">
+    <button type="button" class="layui-btn layui-btn-primary">确认按钮</button>
+   </form>
+	</body>
+	
+
+</html>
