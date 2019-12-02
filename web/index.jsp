@@ -73,7 +73,6 @@
       </ul>
     </div>
   </div>
-
   <!-- 左侧导航 -->
   <div class="layui-side layui-bg-black">
     <div class="user-photo">
@@ -141,7 +140,6 @@
     //保存用户登录信息
     sessionStorage.setItem("uname","${loginUser.uname}")
     sessionStorage.setItem("userRid","${loginUser.role.id}")
-
 
 </script>
 </body>

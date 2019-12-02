@@ -27,8 +27,7 @@
     <context:component-scan base-package="com.prj.*"></context:component-scan>
 
     <!--spring管理事务-->
-    <!--配置事务管理类 -->
-    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--把数据源交给spring-->
         <property name="dataSource" ref="dataSourceBean"></property>
     </bean>
@@ -40,11 +39,13 @@
         <!--告诉spring mybatis的配置文件在哪-->
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
     </bean>
+
     <!--扫描mybatis的mapper文件-->
     <!-- spring 会自动为我们Mapper对应的MapperFactoryBean对象-->
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.prj.mapper"></property>
     </bean>
+
 
 </beans>

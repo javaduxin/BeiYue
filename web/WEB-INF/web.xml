@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <welcome-file-list>
         <welcome-file>/page/login/login.html</welcome-file>
     </welcome-file-list>
@@ -16,8 +17,10 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <!-- spring解决中文乱码	 -->
-    <!-- spring字符编码过滤器start-->
+
+
+
+    <!--处理中文乱码-->
     <filter>
         <!--① Spring 编码过滤器 -->
         <filter-name>encodingFilter</filter-name>
@@ -58,4 +61,13 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.prj.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

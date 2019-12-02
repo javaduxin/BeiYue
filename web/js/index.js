@@ -20,7 +20,16 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 			if(json == "contentManagement"){
 
 
-               
+               /* var contentManagement=[];
+
+                //管理员
+                if(sessionStorage.getItem("userRid")==1){
+                    contentManagement=data.contentManagement;
+                }
+                //商家
+                if(sessionStorage.getItem("userRid")==2){
+                    contentManagement.push(data.contentManagement[2]);
+                }*/
 
                 dataStr = contentManagement;
                 //重新渲染左侧菜单
