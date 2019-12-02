@@ -40,7 +40,6 @@
         <!--告诉spring mybatis的配置文件在哪-->
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
     </bean>
-
     <!--扫描mybatis的mapper文件-->
     <!-- spring 会自动为我们Mapper对应的MapperFactoryBean对象-->
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->

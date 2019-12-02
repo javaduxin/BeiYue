@@ -11,8 +11,8 @@
     <resultMap id="roleMap" type="Role">
         <id column="id" property="id"></id>
         <result column="rname" property="rname"></result>
-
     </resultMap>
+
 
     <select id="login"  resultMap="userMap" parameterType="User">
     SELECT *  FROM USER u,role r WHERE u.role_id=r.id AND uname=#{uname} AND pwd=#{pwd}

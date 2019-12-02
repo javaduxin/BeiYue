@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
-        <!-- 延迟加载 -->
         <setting name="lazyLoadingEnabled" value="false" />
     </settings>
     <typeAliases>

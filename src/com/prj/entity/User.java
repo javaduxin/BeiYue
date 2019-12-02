@@ -6,6 +6,7 @@ public class User  {
     private String pwd;
     private Role role;
 
+
     public Role getRole() {
         return role;
     }

@@ -19,7 +19,6 @@ public class UserController  {
     public UserServer getUserServer() {
         return userServer;
     }
-
     public void setUserServer(UserServer userServer) {
         this.userServer = userServer;
     }

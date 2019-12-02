@@ -20,4 +20,5 @@
     <mvc:resources mapping="/json/**" location="/json/" />
     <mvc:resources mapping="/layui/**" location="/layui/" />
     <mvc:resources mapping="/page/**" location="/page/" />
+
 </beans>

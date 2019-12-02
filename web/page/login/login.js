@@ -8,7 +8,6 @@ layui.use(['form','layer','jquery'],function(){
     form.on("submit",function(datalayui){
         $(this).text("登录中...").attr("disabled","disabled").addClass("layui-disabled");
         setTimeout(function(){
-
             $.ajax({
                 type: 'post',//提交请求的类型
                 url: '/login', // ajax请求路径
