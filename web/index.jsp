@@ -144,7 +144,6 @@
     sessionStorage.setItem("uname","${loginUser.uname}")
     sessionStorage.setItem("userRid","${loginUser.role.id}")
 
-
 </script>
 </body>
 </html>
