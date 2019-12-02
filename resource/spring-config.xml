@@ -33,26 +33,6 @@
         <property name="dataSource" ref="dataSourceBean"></property>
     </bean>
 
-    <!-- transaction-manager设置事务bean -->
-    <!--设置事务属性 -->
-    <tx:advice id="txAdvice" transaction-manager="txManager">
-        <tx:attributes>
-            <tx:method name="*" /><!--所有方法均加入事务处理 -->
-            <!-- <tx:method name="get*"/> --><!--最好不要这么配置，会导致属性的getter也加入事务处理 -->
-            <!--避免属性的getter加入事务处理,匹配多个tx:method的方法以后面这个为准 -->
-            <!--尽量减少tx:method标签有助于提高系统性能，下面的"get*"和"set*"可以省略，但编程时要可以避免使用getter和setter -->
-            <tx:method name="get*" propagation="NEVER" />
-            <tx:method name="set*" propagation="NEVER" />
-        </tx:attributes>
-    </tx:advice>
-    <!-- 使用aop去管理声明式事务 -->
-    <aop:config>
-        <aop:pointcut id="daoMethod" expression="execution(* com.prj.mapper.*.*(..))" />
-        <aop:advisor pointcut-ref="daoMethod" advice-ref="txAdvice" />
-    </aop:config>
-
-
-
     <!--设置mybatis-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--注入数据源-->

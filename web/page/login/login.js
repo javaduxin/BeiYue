@@ -3,11 +3,6 @@ layui.use(['form','layer','jquery'],function(){
         layer = parent.layer === undefined ? layui.layer : top.layer
         $ = layui.jquery;
 
-    /*$(".loginBody .seraph").click(function(){
-        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧",{
-            time:5000
-        });
-    })*/
 
     //表单提交之前
     form.on("submit",function(datalayui){
@@ -23,7 +18,7 @@ layui.use(['form','layer','jquery'],function(){
                     if(data=='ok'){
                         layer.msg('登录成功');
                         window.location.href = "../../index.jsp";
-                    }else if(data=='error'){
+                    }else if(data=='loginError'){
 
                         datalayui.elem.innerText="登录";
                         datalayui.elem.removeAttribute("disabled");
@@ -39,12 +34,12 @@ layui.use(['form','layer','jquery'],function(){
     })
 
 
-    //更新验证码
+    /*//更新验证码
     $("img").click(function (){
         //第二张图片是验证码更换图片
         $("img").get(1).setAttribute("src","/code?timestamp=" + (new Date()).valueOf());
     })
-
+*/
     //表单输入效果
     $(".loginBody .input-item").click(function(e){
         e.stopPropagation();
