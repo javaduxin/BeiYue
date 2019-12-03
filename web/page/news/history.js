@@ -21,8 +21,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             {field: 'newsId', title: 'ID', width:60, align:"center"},
             {field: 'newsName', title: '用户ID', width:350},
             {field: 'newsAuthor', title: '姓名', align:'center'},
-            {field: 'newsStatus', title: '试卷名称',  align:'center',templet:"#newsStatus"},
-            {field: 'newsLook', title: '分数', align:'center'},
+            {field: 'newsStatus', title: '名称',  align:'center',templet:"#newsStatus"},
+            {field: 'newsLook', title: 'XXX', align:'center'},
             /*{field: 'newsTop', title: '是否置顶', align:'center', templet:function(d){
                 return '<input type="checkbox" name="newsTop" lay-filter="newsTop" lay-skin="switch" lay-text="是|否" '+d.newsTop+'>'
             }},*/
