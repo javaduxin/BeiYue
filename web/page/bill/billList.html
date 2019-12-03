@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+</head>
+<body>
+	
+	<div class="demoTable" style="margin-top: 20px">
+	    &nbsp; 搜索商家：
+	    <div class="layui-inline">
+	        <input class="layui-input" name="name" id="searchName" autocomplete="off">
+	    </div>
+	    搜索地址：
+	    <div class="layui-inline">
+	        <input class="layui-input" name="sex" id="searchSex" autocomplete="off">
+	    </div>
+		 <div class="layui-inline">
+		      <label class="layui-form-label">验证日期</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		<button class="layui-btn" id="searchBtn" data-type="reload">搜索</button>
+	</div>
+
+	<table class="layui-hide" id="demo"></table>
+	<script type="text/html" id="barDemo">
+		<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</script>
+<script src="../../layui/layui.all.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  //展示已知数据
+  table.render({
+    elem: '#demo',
+	  height: '420',
+	 page: true
+	, toolbar: '#toolbarDemo'
+    ,cols: [[ //标题栏
+      {field: 'id', title: 'ID', width: 80, sort: true}
+      ,{field: 'username', title: '店名', width: 120}
+      ,{field: 'email', title: '地址', minWidth: 150}
+      ,{field: 'sign', title: '合计营业额', minWidth: 160}
+      ,{field: 'sex', title: '单位', width: 80}
+      ,{field: 'city', title: '时间', width: 100}
+          ,{fixed: 'right', width: 165, align:'center', toolbar: '#barDemo'}
+    ]]
+    ,data: [{
+      "id": "10001"
+      ,"username": "四川人家"
+      ,"email": "惠明路店"
+      ,"sex": "元"
+      ,"city": "2019年11月"
+      ,"sign": "3800"
+    }, {
+          "id": "10001"
+          ,"username": "小四川"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "4582"
+      }, {
+          "id": "10001"
+          ,"username": "私家菜馆"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "3212"
+      },{
+          "id": "10001"
+          ,"username": "鸿运排骨"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "8784"
+      }, {
+          "id": "10001"
+          ,"username": "农家炒菜"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "1235"
+      },  {
+          "id": "10001"
+          ,"username": "四川人家"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "6548"
+      }, {
+          "id": "10001"
+          ,"username": "四川人家"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "3800"
+      }, {
+          "id": "10001"
+          ,"username": "四川人家"
+          ,"email": "惠明路店"
+          ,"sex": "元"
+          ,"city": "2019年11月"
+          ,"sign": "3800"
+      }]
+    //,skin: 'line' //表格风格
+    ,even: true
+    //,page: true //是否显示分页
+    //,limits: [5, 7, 10]
+    //,limit: 5 //每页默认显示的数量
+  });
+});
+</script>
+
+</body>
+</html>
