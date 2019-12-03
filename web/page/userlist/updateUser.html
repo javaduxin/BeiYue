@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body>
+<div class="layui-container">
+    <form class="layui-form" action="/updateUser" method="post">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="id" value="1" readonly class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-block">
+                <input type="text" name="nickname" value="秋夜" required  lay-verify="required" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" value="邱霖" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系方式</label>
+            <div class="layui-input-block">
+                <input type="text" name="phone" value="111111111111" required  lay-verify="required" placeholder="请输入联系方式" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="address" value="陕西省西安市" required  lay-verify="required" placeholder="请输入地址" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <label class="layui-form-label">请选择角色</label>
+        <div class="layui-input-inline">
+            <select name="modules" lay-verify="required" lay-search="">
+                <option value="1">管理员</option>
+                <option value="2">商家</option>
+            </select>
+        </div>
+             <hr/>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="examInit.js"></script>
+<script type="text/javascript" src="../../js/cache.js"></script>
+</body>
+<script src="/layui/layui.js"></script>
+
+
+<script>
+
+    layui.use(['form','table'],function (){
+        var form=layui.form;
+        var table=layui.table;
+        var $=layui.jquery;//引用layui内置的jquery
+
+        $.ajax({
+            url:"/queryRole",
+            success:function (data){
+
+                var myselect=document.getElementById("roleId");
+
+                var html="";
+                for(var i=0;i<data.length;i++){
+                    if($("#rid").val()==data[i].id){
+                        html+="<option selected value='"+data[i].id+"'>"+data[i].name+"</option>";
+                    }else {
+                        html+="<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+                    }
+                }
+
+                myselect.innerHTML=html;
+                form.render("select");//重新加载下拉列表
+            }
+        })
+
+        form.on("submit",function (){
+
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+
+            /*不适用
+            window.parent.location.reload();*/
+            window.parent.layui.table.reload('mytab',{
+                url: '/queryUser'//重新访问controller
+            })
+
+        })
+    })
+
+
+
+
+</script>
+
+</html>
