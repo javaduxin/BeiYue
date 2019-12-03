@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+</head>
+<body>
+<table id="mytab"></table>
+
+<script type="text/html" id="addUserToolBar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="addUser"  >添加用户</button>
+    </div>
+</script>
+<script type="text/html" id="updateUserBar">
+    <a class="layui-btn layui-btn-sm layui-btn-normal " lay-event="updateUser">编辑</a>
+    <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="delUser">删除</a>
+</script>
+
+
+
+</body>
+<script src="../../layui/layui.all.js" charset="utf-8"></script>
+<script>
+
+    layui.use('table', function(){
+        var table = layui.table;
+
+        table.render({
+            elem: '#mytab'
+            ,toolbar:"#addUserToolBar"
+            ,page: true //开启分页
+            ,cols: [[ //表头
+                {type:'checkbox'}
+                ,{field: 'id', title: 'ID', width:80, sort: true}
+                ,{field: 'nickname', title: '昵称', width:100}
+                ,{field: 'name', title: '姓名', width:100}
+                ,{field: 'phone', title: '联系方式', width:180}
+                ,{field: 'address', title: '地址', width:300}
+                ,{field: 'role', title: '角色', width:80}
+                ,{title: '操作', width:150,toolbar:"#updateUserBar"}
+            ]]
+            ,data: [{
+                "id": "0001"
+                ,"nickname": "秋夜"
+                ,"name": "邱霖"
+                ,"phone": "111111111111"
+                ,"address": "陕西省西安市"
+                ,"role": "管理员"
+            },{
+                "id": "0002"
+                ,"nickname": "凌瑾"
+                ,"name": "林菱"
+                ,"phone": "222222222222"
+                ,"address": "陕西省咸阳市"
+                ,"role": "商家"
+            },{
+                "id": "0003"
+                ,"nickname": "虹茗"
+                ,"name": "宏芩"
+                ,"phone": "333333333333"
+                ,"address": "陕西省渭南市"
+                ,"role": "商家"
+            }]
+            ,even: true
+        });
+
+        table.on("toolbar()",function (obj){
+            //添加事件
+            if(obj.event=='addUser'){
+
+                layer.open({
+                    type:2,//弹出层类型
+                    title:"添加用户",
+                    content: window.location.href="./addUser.html",//弹出层内容
+                    area: ['45%', '55%']
+
+                });
+            }
+
+        })
+
+        table.on("tool()",function (obj){
+            //获取当前用户选择的这行数据
+            var data=obj.data;
+
+            if(obj.event=="delUser"){
+                layer.confirm("您确定删除吗?",function (index){
+                    //请求后台
+                    $.ajax({
+                        url:"/del/"+data.id,
+                        success:function (data){
+                            layer.close(index);
+                            //删除成功后刷新表格
+                            table.reload('mytab',{
+                                url: '/queryUser'
+                            })
+                        }
+                    })
+                },function (){
+
+                })
+            }
+            //修改事件
+            if(obj.event=='updateUser'){
+                layer.open({
+                    type:2,//弹出层类型
+                    title:"修改用户",
+                    content:window.location.href="./updateUser.html",//弹出层内容弹出层内容弹出层内容
+                    area: ['45%', '55%']
+                });
+            }
+        })
+
+    });
+</script>
+
+</html>
