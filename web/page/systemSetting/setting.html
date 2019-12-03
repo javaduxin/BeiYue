@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	</head>
+	<body>
+		<script type="text/javascript" src="setting.js"> </script>
+		<script type="text/javascript" src="../../layui/layui.all.js"></script>
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>系统广告栏设置</legend>
+</fieldset>
+ 
+    <div class="layui-upload">
+        <label class="layui-form-label">
+上传图片</label>
+        <div class="layui-input-block">
+            <!-- 上传按钮 -->
+            <button type="button" class="layui-btn" id="test1">上传图片</button>
+            <!-- 隐藏的input -->
+            <input type="hidden" id="msgImgs" name="msgImgs" value=""/>
+            <!-- 预览区域 -->
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo1">
+                <p id="demoText"></p>
+            </div>
+        </div>
+    </div>
+   
+    <form class="layui-form" action="">
+    	<div class="layui-form-item">
+   <div class="layui-form-item">
+       <label class="layui-form-label">广告输入：</label>
+       <div class="layui-input-inline">
+         <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+       </div>
+     </div>
+  </div>
+  <div class="layui-form-item">
+      <label class="layui-form-label">广告跳转商户地址：</label>
+      <div class="layui-input-inline">
+        <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+	<br />
+  <div align="right">
+    <button type="button" class="layui-btn layui-btn-primary">确认按钮</button>
+   </form>
+	</body>
+	<script>
+		layui.use(['jquery','form','upload'], function () {
+		        var form = layui.form;
+		        var $ = layui.$
+		        var upload = layui.upload;
+		        var reid;
+		      
+		        //普通图片上传
+		        var uploadInst = upload.render({
+		            elem: '#test1'
+		            ,url: '/addPicture.action'
+		            ,auto: false//选择文件后不自动上传
+		            , bindAction: '#uploadImg'
+		            ,before: function(obj){
+		                layer.load();
+		                this.data = {'id': reid};
+		                //预读本地文件示例，不支持ie8
+		                obj.preview(function(index, file, result){
+		                    $('#demo1').attr('src', result);//图片链接（base64）
+		                });
+		            }
+		            ,done: function(res){
+		                //如果上传失败
+		                if(res.code > 0){
+		                    return layer.msg('上传失败');
+		                }
+		                //上传成功
+		            }
+		            ,error: function(){
+		                //演示失败状态，并实现重传
+		                var demoText = $('#demoText');
+		                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+		                demoText.find('.demo-reload').on('click', function(){
+		                    uploadInst.upload();
+		                });
+		            }
+		        });
+		
+		    });
+		
+	</script>
+</html>
