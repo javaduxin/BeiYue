@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>添加菜品</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+</head>
+<body>
+<form  class="layui-form layui-row layui-col-space10" >
+    <div class="layui-input-block">
+    <h1>添加菜品</h1>
+        <br style="color: gray"/>
+    </div>
+    </div>
+    <div class="layui-form-item"><!--菜品名称-->
+        <label class="layui-form-label">菜品名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="foodName"
+                   id="foodName"
+                   required lay-verify="required" class="layui-input" style="width: 500px"
+                   placeholder="请输入菜品名称">
+        </div>
+    </div>
+
+    <div class="layui-form-item"><!--菜品价格-->
+        <label class="layui-form-label">菜品价格</label>
+        <div class="layui-input-block">
+            <input type="text" name="foodPrice"
+                   id="foodPrice"
+                   required lay-verify="required" class="layui-input" style="width: 500px"
+                   placeholder="请输入菜品价格">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--菜品图片-->
+        <div class="layui-input-block">
+            <label>菜品图片</label>
+        </div>
+        <div class="layui-input-block">
+            <img class="layui-upload-img" id="demo" >
+            <p id="demoText"></p>
+            <button type="button" class="layui-btn" id="foodImage">上传图片</button>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <a class="layui-btn layui-btn-sm" lay-filter="addFood" lay-submit><i class="layui-icon">&#xe609;</i>确认添加</a>
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>

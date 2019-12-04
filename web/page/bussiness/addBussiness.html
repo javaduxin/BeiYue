@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加商家</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+</head>
+<script type="text/javascript" src="../../layui/layui.all.js"></script>
+<body class="childrenBody" >
+
+<form class="layui-form layui-row layui-col-space10" >
+
+    <div class="layui-input-block "><!--隐藏ID-->
+        <input type="hidden" name="bussinessId"
+               id="id"
+               required lay-verify="required">
+    </div>
+    <div class="layui-form-item"><!--门店图片-->
+        <div class="layui-input-block">
+            <label>门店图片</label>
+        </div>
+        <div class="layui-input-block">
+            <p id="demoText"></p>
+            <button type="button" class="layui-btn" id="bussinesspage">添加图片</button>
+        </div>
+    </div>
+    <div class="layui-form-item"><!--店名-->
+        <label class="layui-form-label">店名</label>
+        <div class="layui-input-block">
+            <input type="text" name="bussinessName"
+                   id="bussinessName"
+                   required lay-verify="required" class="layui-input" style="width: 500px"
+                   placeholder="请输入店名">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--店主-->
+        <label class="layui-form-label">店主</label>
+        <div class="layui-input-block ">
+
+            <input type="text" name="shopkeeper" class="layui-input" style="width: 500px"
+                   id="shopkeeper"
+                   required lay-verify="required"
+                   placeholder="店主">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--地址-->
+        <label class="layui-form-label">地址</label>
+        <div class="layui-input-block ">
+            <input type="text" name="bussinessAddress" class="layui-input" style="width: 500px"
+                   id="bussinessAddress"
+                   required lay-verify="required" placeholder="地址">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--电话-->
+        <label class="layui-form-label">电话</label>
+        <div class="layui-input-block ">
+            <input type="text" name="phoneNumber" class="layui-input" style="width: 500px"
+                   id="phoneNumber"
+                   required lay-verify="required"
+                   placeholder="电话">
+        </div>
+    </div>
+
+    <div class="layui-form-item"><!--广告图片-->
+        <div class="layui-input-block">
+            <label>广告图片</label>
+        </div>
+        <div class="layui-input-block">
+            <p id="demoText2"></p>
+            <button type="button" class="layui-btn" id="Advertisement">添加新的广告图片</button>
+        </div>
+    </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="addFood">添加菜品</button>
+        </div>
+    </div>
+    <div class="layui-input-block">
+        <a class="layui-btn layui-btn-sm" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>确认添加</a>
+    </div>
+</form>
+<script>
+    layui.use(['jquery','layer'],function () {
+        var  $=layui.$,
+            layer=layui.layer;
+        $('#addFood').on("click",function () {
+            layer.open({
+                title : "添加菜品",
+                type : 2,
+                content : "addFood.html",
+                area: ['1000px','1000px'],
+                success:function () {
+                    setTimeout(function(){
+                        layui.layer.tips('点击此处返回添加页面', '.layui-layer-setwin .layui-layer-close', {
+                            tips: 3
+                        });
+                    },500)
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
