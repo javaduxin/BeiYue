@@ -16,14 +16,21 @@
 	    <div class="layui-inline">
 	        <input class="layui-input" name="sex" id="searchSex" autocomplete="off">
 	    </div>
-		 <div class="layui-inline">
-		      <label class="layui-form-label">验证日期</label>
-		      <div class="layui-input-inline">
-		        <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-		      </div>
-		    </div>
+		时间
+		<div class="layui-input-inline">
+
+			<input type="text" id="start_time" name="start_time" autocomplete="off" placeholder="请输入开始时间" class="layui-input">
+
+		</div> 至
+
+		<div class="layui-input-inline">
+
+			<input type="text" id="end_time" name="start_time" autocomplete="off" placeholder="请输入结束时间" class="layui-input">
+
+		</div>
 		<button class="layui-btn" id="searchBtn" data-type="reload">搜索</button>
-	</div>
+	</div>         
+
 	<script type="text/html" id="updatepage">
 		<form class="layui-form" lay-filter="update-form">
 			<div class="layui-input-block ">
