@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>北月餐</title>
 
         <meta name="renderer" content="webkit">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -38,6 +38,7 @@
                     </dl>
                 </li>
             </ul>
+
             <ul class="layui-nav topLevelMenus" pc>
                 <li class="layui-nav-item layui-this" data-menu="contentManagement">
                     <a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>商家管理</cite></a>
@@ -64,7 +65,7 @@
                     <a href="javascript:;"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
                 </li>
                 <li class="layui-nav-item" id="userInfo">
-                    <a href="javascript:;"><img src="../images/face.jpg" class=" userAvatar" width="35" height="35"><cite class="adminName">管理员</cite></a>
+                    <a href="javascript:;"><img src="../images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">管理员</cite></a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
                         <dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
@@ -96,9 +97,17 @@
             <ul class="layui-nav layui-nav-tree">
                 <li class="layui-nav-item layui-this">
                     <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" data-icon=" "></i><cite>后台首页</cite></a>
-                    <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>编辑商家</cite></a>
+                    <!--<a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>编辑商家</cite></a>
                     <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>商家查询</cite></a>
                     <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>账单管理</cite></a>
+                    <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>系统广告设置</cite></a>-->
+                </li>
+            </ul>
+            <ul class="layui-nav layui-nav-tree">
+                <li class="layui-nav-item ">
+                    <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>编辑商家</cite></a>
+                    <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>商家查询</cite></a>
+                    <a href="javascript:;" data-url="../page/main.html" id="bill"><i class="layui-icon" ></i><cite>账单管理</cite></a>
                     <a href="javascript:;" data-url="../page/main.html"><i class="layui-icon" ></i><cite>系统广告设置</cite></a>
                 </li>
             </ul>
@@ -140,7 +149,11 @@
 <script type="text/javascript" src="layui/layui.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/cache.js"></script>
-
+<!--<script>
+    document.getElementById("bill").addEventListener("click",function(){
+    window.location.href = "bill/manageBills.html";
+});
+</script>-->
 </body>
 
 </html>
