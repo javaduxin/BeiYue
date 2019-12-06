@@ -47,9 +47,9 @@
 	],
 	"bill": [
 		{
-			"title": "账单管理",
+			"title": "账单查询",
 			"icon": "&#xe612;",
-			"href": "page/bill/manageBills.html",
+			"href": "page/bill/showBill .html",
 			"spread": false
 		}
 	],

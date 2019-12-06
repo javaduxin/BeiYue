@@ -30,6 +30,30 @@
     </div>
     <button class="layui-btn" id="searchBtn" data-type="reload">搜索</button>
     </div>
+<div class="layui-form">
+    <table class="layui-table">
+        <colgroup>
+            <col width="150">
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>店名</th>
+            <th>地址</th>
+            <th>时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>四川人家</td>
+            <td>惠明路店</td>
+            <td>2019-11-3</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <table class="layui-table" lay-even="" lay-skin="nob" id="demo2"></table>
 <table class="layui-hide" id="demo"></table>
 <script type="text/html" id="updatepage">
@@ -87,43 +111,8 @@
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <script src="../../layui/layui.all.js" charset="utf-8"></script>
-<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
-<script>
-    layui.use(['table', 'jquery', 'form','upload', 'laydate','layedit'], function(){
-        var table = layui.table
-            ,laydate = layui.laydate
-            ,layedit = layui.layedit;
+ <!--注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的-->
 
-        //展示已知数据
-        table.render({
-            elem: '#demo2',
-            height: '100'
-            ,cols: [[ //标题栏
-                ,{field: 'username', title: '店名', width: 120}
-                ,{field: 'email', title: '地址', minWidth: 150}
-                ,{field: 'city', title: '时间', width: 100}
-            ]]
-            ,data: [{
-                "username": "四川人家"
-                ,"email": "惠明路店"
-                ,"city": "2019年11月"
-            }]
-            //,skin: 'line' //表格风格
-            ,even: true
-            //,page: true //是否显示分页
-            //,limits: [5, 7, 10]
-            //,limit: 5 //每页默认显示的数量
-        });
-         日期
-        laydate.render({
-            elem: '#date'
-        });
-        laydate.render({
-            elem: '#date1'
-        });
-
-    });
-</script>
 <script>
     layui.use(['table', 'jquery', 'form','upload'], function(){
         var table = layui.table;
