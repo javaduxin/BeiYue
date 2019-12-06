@@ -10,7 +10,7 @@
 
 <script type="text/html" id="addUserToolBar">
     <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="addUser"  >添加用户</button>
+        <a class="layui-btn layui-btn-sm" lay-event="addUser" href="addUser.html">添加用户</a>
     </div>
 </script>
 <script type="text/html" id="updateUserBar">
@@ -66,7 +66,7 @@
             ,even: true
         });
 
-        table.on("toolbar()",function (obj){
+        table.on("tool()",function (obj){
             //添加事件
             if(obj.event=='addUser'){
 
@@ -87,17 +87,9 @@
 
             if(obj.event=="delUser"){
                 layer.confirm("您确定删除吗?",function (index){
-                    //请求后台
-                    $.ajax({
-                        url:"/del/"+data.id,
-                        success:function (data){
-                            layer.close(index);
-                            //删除成功后刷新表格
-                            table.reload('mytab',{
-                                url: '/queryUser'
-                            })
-                        }
-                    })
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+
                 },function (){
 
                 })
