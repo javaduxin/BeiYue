@@ -3,24 +3,24 @@
 		{
 			"title": "编辑商家",
 			"icon": "icon-text",
-			"href": "page/news/newsList.html",
+			"href": "page/bussiness/updateBussiness.html",
 			"spread": false
 		},
 		{
 			"title": "商家查询",
 			"icon": "&#xe634;",
-			"href": "page/news/history.html",
+			"href": "page/bussiness/bussiness.html",
 			"spread": false
 		},{
 			"title": "账单管理",
 			"icon": "icon-clock",
-			"href": "page/news/examInit.html",
+			"href": "page/bill/manageBills.html",
 			"spread": false
 		},
 		{
 			"title": "系统广告设置",
 			"icon": "&#xe630;",
-			"href": "",
+			"href": "page/systemSetting/setting.html",
 			"spread": false
 		},
 		{
@@ -41,7 +41,15 @@
 		{
 			"title": "用户中心",
 			"icon": "&#xe612;",
-			"href": "page/user/userList.html",
+			"href": "page/userlist/user.html",
+			"spread": false
+		}
+	],
+	"bill": [
+		{
+			"title": "账单管理",
+			"icon": "&#xe612;",
+			"href": "page/bill/manageBills.html",
 			"spread": false
 		}
 	],
@@ -51,10 +59,13 @@
 			"icon": "&#xe631;",
 			"href": "page/systemSetting/basicParameter.html",
 			"spread": false
-		},{
+		}
+	],
+	"log": [
+		{
 			"title": "系统日志",
 			"icon": "icon-log",
-			"href": "page/systemSetting/logs.html",
+			"href": "page/logs/logs.html",
 			"spread": false
 		}
 	]
