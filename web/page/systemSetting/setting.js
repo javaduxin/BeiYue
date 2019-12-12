@@ -35,4 +35,4 @@ layui.use(['jquery','form','upload'], function () {
             }
         });
 
-    /*})*/;
+    });
