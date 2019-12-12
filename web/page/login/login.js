@@ -19,7 +19,7 @@ layui.use(['form','layer','jquery'],function(){
     form.on("submit",function(data){
         $(this).text("登录中...").attr("disabled","disabled").addClass("layui-disabled");
         setTimeout(function(){
-            window.location.href = "/page/index.html";
+            window.location.href = "/web/index.html";
         },1000);
         return false;
     })

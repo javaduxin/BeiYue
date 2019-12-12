@@ -1,4 +1,4 @@
-layui.use(['jquery','form','upload'], function () {
+/*layui.use(['jquery','form','upload'], function () {*/
         var form = layui.form;
         var $ = layui.$
         var upload = layui.upload;
@@ -35,4 +35,4 @@ layui.use(['jquery','form','upload'], function () {
             }
         });
 
-    });
+    /*})*/;
