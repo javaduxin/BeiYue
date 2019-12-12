@@ -1,0 +1,32 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 5,
+	"data": [
+		{
+			"foodId": "1",
+			"foodName": "鱼香肉丝",
+			"foodPrice": "10"
+		},
+		{
+			"foodId": "2",
+			"foodName": "宫保鸡丁",
+			"foodPrice": "20"
+		},
+		{
+			"foodId": "3",
+			"foodName": "糖醋里脊",
+			"foodPrice": "30"
+		},
+		{
+			"foodId": "4",
+			"foodName": "重庆小面",
+			"foodPrice": "40"
+		},
+		{"foodId": "5",
+			"foodName": "京酱肉丝",
+			"foodPrice": "50"
+		}
+
+	]
+}

@@ -3,20 +3,20 @@
   "msg": "",
   "count": 12,
   "data":[
-      {
-        "bussinessId":1,
-        "bussinessName":"AAA",
-        "bussinessAddress":"AAA",
-        "shopkeeper":"AAA",
-        "phoneNumber":"AAA"
-      },
-      {
+    {
+      "bussinessId":1,
+      "bussinessName":"AAA",
+      "bussinessAddress":"AAA",
+      "shopkeeper":"AAA",
+      "phoneNumber":"AAA"
+    },
+    {
       "bussinessId":2,
       "bussinessName":"BBB",
       "bussinessAddress":"BBB",
       "shopkeeper":"BBB",
       "phoneNumber":"BBB"
-     },
+    },
     {
       "bussinessId":3,
       "bussinessName":"CCC",

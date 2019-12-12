@@ -1,4 +1,4 @@
-layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider','jquery','form'],function(){
+layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element','jquery','form'],function(){
     var laydate = layui.laydate //日期
         , laypage = layui.laypage //分页
         , layer = layui.layer //弹层
@@ -6,20 +6,19 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
         , carousel = layui.carousel //轮播
         , upload = layui.upload //上传
         , element = layui.element //元素操作
-        , slider = layui.slider //滑块
         ,$=layui.$
         ,form=layui.form;
     //商家
     var tableIns = table.render({
-        elem: '#newsList',
+        elem: '#bussiness',
         url : 'bussiness.json',
         cellMinWidth : 95,
-        toolbar: '#toolbarDemo',
+        toolbar: '#top',
         page : true,
         height : "full-125",
         limit : 10,
         limits : [10,15,20,25],
-        id : "newsListTable",
+        id : "test",
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
             {field: 'bussinessId', title: '商家编号',  align:"center"},
@@ -27,74 +26,68 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
             {field: 'bussinessAddress', title: '地址', align:'center'},
             {field: 'shopkeeper', title: '店主',  align:'center'},
             {field: 'phoneNumber', title: '电话', align:'center'},
-            {title: '操作', templet:'#newsListBar',fixed:"right",align:"center"}
+            {title: '操作', toolbar:'#foot',fixed:"right",align:"center"}
         ]]
     });
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click",function(){
         console.log("搜索")
-                if($(".searchVal").val() != ''){
-                    table.reload("newsListTable",{
-                        page: {
-                            curr: 1 //重新从第 1 页开始
-                        },
-                        where: {
-                            key: $(".searchVal").val()  //搜索的关键字
-                        }
-                    })
+        if($(".searchVal").val() != ''){
+            table.reload("newsListTable",{
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                },
+                where: {
+                    key: $(".searchVal").val()  //搜索的关键字
+                }
+            })
         }else{
             layer.msg("请输入搜索的内容");
         }
     });
-    //头工具
-    table.on('toolbar(test)', function (obj) {
-        var checkStatus = table.checkStatus(obj.config.id);
-        switch (obj.event) {
-            case 'add':
-                var index2=layer.open({
-                    resize: true,
-                    title: '添加商家',
-                    shadeClose: true,
-                    area: ['1000px','1000px'],
-                    type:2,
-                    content:'addBussiness.html',
-                });
-                break;
-            case 'delete':
-
-                var data = checkStatus.data,
-                    userids = "";
-                if (data.length > 0) {
-                    for (var i in data) {
-                        userids += data[i].userid + ","
-                        layer.msg(userids);
-                    }
-                    console.log(userids);
-                    layer.confirm('真的删除行么', function (index) {
-                        $.ajax({
-                            url:"delete2.action",
-                            data: {"userids": userids},
-                            success: function (flag) {
-                                if (flag > 0) {
-                                    layer.msg("删除成功", {icon: 6});
-                                    layer.closeAll();
-                                    table.reload('testReload', {});
-                                } else {
-                                    layer.msg("删除 失败", {icon: 6});
-                                }
-
-                            }
-                        })
-
-                    })
-                }
-                break;
-            case 'update':
-                layer.msg('编辑');
-                break;
-        }
-
-    })
+    // //头工具
+    // table.on('tool(test)', function (obj) {
+    //     var checkStatus = table.checkStatus(obj.config.id);
+    //     switch (obj.event) {
+    //         case 'add':
+    //             console.log("123");
+    //             var index2=layer.open({
+    //                 resize: true,
+    //                 title: '添加商家',
+    //                 shadeClose: true,
+    //                 area: ['1000px','1000px'],
+    //                 type:2,
+    //                 content:'addBussiness.html',
+    //             });
+    //             break;
+    //         case 'delAll':
+    //             var data = checkStatus.data,
+    //                 userids = "";
+    //             if (data.length > 0) {
+    //                 for (var i in data) {
+    //                     userids += data[i].userid + ","
+    //                     layer.msg(userids);
+    //                 }
+    //                 console.log(userids);
+    //                 layer.confirm('真的删除行么', function (index) {
+    //                     $.ajax({
+    //                         url:"delete2.action",
+    //                         data: {"userids": userids},
+    //                         success: function (flag) {
+    //                             if (flag > 0) {
+    //                                 layer.msg("删除成功", {icon: 6});
+    //                                 layer.closeAll();
+    //                                 table.reload('testReload', {});
+    //                             } else {
+    //                                 layer.msg("删除 失败", {icon: 6});
+    //                             }
+    //                         }
+    //                     })
+    //                 })
+    //             }
+    //             break;
+    //     }
+    // })
 
     function addNews(edit){
         var index1 = layer.open({
@@ -103,7 +96,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
             title:"修改商家",
             shadeClose: true,
             content : "updateBussiness.html",
-            area: ['45%','1000px'],
+            area: ['60%','1000px'],
             success : function(layero, index1){
                 var body = layer.getChildFrame('body', index1);
                 if(edit){
@@ -128,6 +121,60 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 tableIns.reload();
                 layer.close(index);
             });
+        }else if(layEvent ==='lookFood'){
+            var index4=layer.open({
+                resize: true,
+                type : 2,
+                title:"查看菜品",
+                shadeClose: true,
+                content : "food.html",
+                area: ['70%','1000px'],
+            })
         }
     });
+    $("#add").on('click',function () {
+        var index2=layer.open({
+            resize: true,
+            title: '添加商家',
+            shadeClose: true,
+            area: ['1000px','1000px'],
+            type:2,
+            content:'addBussiness.html',
+        });
+    })
+
+
+
+    // table.on('tool(test)',function (obj) {
+    //     var checkStatus = table.checkStatus(obj.config.id);
+    //     switch (obj.event){
+    //         case 'delAll':
+    //             var data = checkStatus.data,
+    //                 bussinessids = "";
+    //             console.log(data);
+    //             if (data.length > 0) {
+    //                 for (var i in data) {
+    //                     bussinessids += data[i].bussinessId + ","
+    //                     layer.msg(bussinessids);
+    //                 }
+    //                 console.log("---"+bussinessids);
+    //                 layer.confirm('真的删除行么', function (index) {
+    //                     $.ajax({
+    //                         url:"/order/delete.action",
+    //                         data: {"bussinessids": bussinessids},
+    //                         success: function (flag) {
+    //                             if (flag > 0) {
+    //                                 layer.msg("删除成功", {icon: 6});
+    //                                 layer.closeAll();
+    //                                 table.reload('newsListTable', {});
+    //                             } else {
+    //                                 layer.msg("删除 失败", {icon: 6});
+    //                             }
+    //                         }
+    //                     })
+    //                 })
+    //             }
+    //             break;
+    //     }
+    // })
 })

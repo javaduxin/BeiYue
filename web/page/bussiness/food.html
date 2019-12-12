@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜品查看</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+</head>
+<body>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add" id="addFood">添加菜品</button>
+        <button class="layui-btn layui-btn-sm delAll_btn" lay-event="delete">批量删除</button>
+    </div>
+</script>
+<table id="food">
+</table>
+<script type="text/html" id="newsListBar">
+    <a class="layui-btn layui-btn-xs" lay-event="edit" >修改菜品</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除菜品</a>
+</script>
+
+<script src="../../layui/layui.all.js"></script>
+<script>
+    layui.use(['jquery','layer','table'],function () {
+        var  $=layui.$,
+            layer=layui.layer,
+            table=layui.table;
+        table.render({
+            elem: '#food',
+            url : 'food.json',
+            // cellMinWidth : 95,
+            toolbar: '#toolbarDemo',
+            page : true,
+            // height : "full-125",
+            limit : 10,
+            limits : [10,15,20,25],
+            id : "foodListTable",
+            cols : [[
+                {type: "checkbox", fixed:"left", width:50},
+                {field: 'foodId', title: 'ID',  align:"center"},
+                {field: 'foodName', title: '菜名'},
+                {field: 'foodPrice', title: '价格', align:'center'},
+                {field: 'foodImg', title: '图片',  align:'center',templet:
+                        '<div><img style="height:35px;width:35px;" src="../../images/food.jpg" alt=""> </div>'},
+                {title: '操作', templet:'#newsListBar',fixed:"right",align:"center"}
+            ]]
+        });
+
+        $("#addFood").on('click',function () {
+            layer.open({
+                resize: true,
+                type : 2,
+                title:"查看菜品",
+                shadeClose: true,
+                content : "addFood.html",
+                area: ['70%','1000px'],
+            })
+        })
+
+    })
+
+
+
+</script>
+</body>
+</html>

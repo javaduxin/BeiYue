@@ -9,118 +9,133 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="/web/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
 </head>
-<script type="text/javascript" src="/web/layui/layui.all.js"></script>
+<script type="text/javascript" src="../../layui/layui.all.js"></script>
 <body class="childrenBody" >
 
 <form class="layui-form layui-row layui-col-space10" >
 
-                <div class="layui-input-block">
-                    <h1 id="title">店名</h1><!--标题-->
-                </div>
-                <div class="layui-input-block "><!--隐藏ID-->
-                    <input type="hidden" name="bussinessId"
-                           id="id"
-                           required lay-verify="required">
-                </div>
-                 <div class="layui-form-item"><!--门店图片-->
-                     <div class="layui-input-block">
-                        <label>门店图片</label>
-                     </div>
-                     <div class="layui-input-block">
-                         <img class="layui-upload-img" id="demo1" src="../../images/userface2.jpg">
-                         <p id="demoText"></p>
-                         <button type="button" class="layui-btn" id="bussinesspage">修改图片</button>
-                     </div>
-                 </div>
-                <div class="layui-form-item"><!--店名-->
-                    <label class="layui-form-label">店名</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="bussinessName"
-                               id="bussinessName"
-                               required lay-verify="required" class="layui-input" style="width: 500px"
-                               placeholder="请输入店名">
-                    </div>
-                </div>
-                <div class="layui-form-item"><!--店主-->
-                    <label class="layui-form-label">店主</label>
-                    <div class="layui-input-block ">
+    <div class="layui-input-block">
+        <h1 id="title">店名</h1><!--标题-->
+    </div>
+    <div class="layui-input-block "><!--隐藏ID-->
+        <input type="hidden" name="bussinessId"
+               id="id"
+               required lay-verify="required">
+    </div>
+    <div class="layui-form-item"><!--门店图片-->
+        <div class="layui-input-block">
+            <label>门店图片</label>
+        </div>
+        <div class="layui-input-block">
+            <img class="layui-upload-img" id="demo1" src="../../images/bussiness.jpg">
+            <p id="demoText"></p>
+            <button type="button" class="layui-btn" id="bussinesspage">修改图片</button>
+        </div>
+    </div>
+    <div class="layui-form-item"><!--店名-->
+        <label class="layui-form-label">店名</label>
+        <div class="layui-input-block">
+            <input type="text" name="bussinessName"
+                   id="bussinessName"
+                   required lay-verify="required" class="layui-input" style="width: 500px"
+                   placeholder="请输入店名">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--店主-->
+        <label class="layui-form-label">店主</label>
+        <div class="layui-input-block ">
 
-                        <input type="text" name="shopkeeper" class="layui-input" style="width: 500px"
-                               id="shopkeeper"
-                               required lay-verify="required"
-                               placeholder="店主">
-                    </div>
-                </div>
-                <div class="layui-form-item"><!--地址-->
-                    <label class="layui-form-label">地址</label>
-                    <div class="layui-input-block ">
-                        <input type="text" name="bussinessAddress" class="layui-input" style="width: 500px"
-                               id="bussinessAddress"
-                               required lay-verify="required" placeholder="地址">
-                    </div>
-                </div>
-                <div class="layui-form-item"><!--电话-->
-                    <label class="layui-form-label">电话</label>
-                    <div class="layui-input-block ">
-                        <input type="text" name="phoneNumber" class="layui-input" style="width: 500px"
-                               id="phoneNumber"
-                               required lay-verify="required"
-                               placeholder="电话">
-                    </div>
-                </div>
-
-                <div class="layui-form-item"><!--广告图片-->
-                    <div class="layui-input-block">
-                        <label>广告图片</label>
-                    </div>
-                    <div class="layui-input-block">
-                        <img class="layui-upload-img" id="demo2" src="../../images/userface1.jpg">
-                        <p id="demoText2"></p>
-                        <button type="button" class="layui-btn" id="Advertisement">添加新的广告图片</button>
-                    </div>
-                </div>
-
-                <div class="layui-form-item"><!--菜品设置-->
-                    <div class="layui-input-block">
-                        <label>已有菜品图片</label>
-                    </div>
-                    <div class="layui-input-block">
-                        <img class="layui-upload-img" id="demo4" src="../../images/userface4.jpg">
-                        <p id="demoText4"></p>
-                        <label>99.0元</label>
-                    </div>
-                </div>
-
-
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button type="button" class="layui-btn" id="addFood">添加新的菜品</button>
-                    </div>
-                </div>
-                <div class="layui-input-block">
-                <a class="layui-btn layui-btn-sm" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>保存修改</a>
-                </div>
+            <input type="text" name="shopkeeper" class="layui-input" style="width: 500px"
+                   id="shopkeeper"
+                   required lay-verify="required"
+                   placeholder="店主">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--地址-->
+        <label class="layui-form-label">地址</label>
+        <div class="layui-input-block ">
+            <input type="text" name="bussinessAddress" class="layui-input" style="width: 500px"
+                   id="bussinessAddress"
+                   required lay-verify="required" placeholder="地址">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--电话-->
+        <label class="layui-form-label">电话</label>
+        <div class="layui-input-block ">
+            <input type="text" name="phoneNumber" class="layui-input" style="width: 500px"
+                   id="phoneNumber"
+                   required lay-verify="required"
+                   placeholder="电话">
+        </div>
+    </div>
+    <div class="layui-form-item"><!--广告图片-->
+        <div class="layui-input-block">
+            <label>广告图片</label>
+        </div>
+        <div class="layui-input-block">
+            <img class="layui-upload-img" id="demo2" src="../../images/ad.jpg">
+            <p id="demoText2"></p>
+            <button type="button" class="layui-btn" id="Advertisement">添加新的广告图片</button>
+        </div>
+    </div>
+    <script type="text/html" id="toolbarDemo">
+        <div class="layui-btn-container">
+            <button class="layui-btn layui-btn-sm" lay-event="add" id="addFood">添加菜品</button>
+            <button class="layui-btn layui-btn-sm delAll_btn" lay-event="delete">批量删除</button>
+        </div>
+    </script>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <span>菜品显示</span>
+        </div>
+        <div class="layui-input-block">
+            <table id="food"></table>
+        </div>
+    </div>
+    <script type="text/html" id="newsListBar">
+        <a class="layui-btn layui-btn-xs" lay-event="edit" >修改菜品</a>
+        <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除菜品</a>
+    </script>
+    <div class="layui-input-block">
+        <a class="layui-btn layui-btn-sm" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>保存修改</a>
+    </div>
 </form>
 <script>
-    layui.use(['jquery','layer'],function () {
+    layui.use(['jquery','layer','table'],function () {
         var  $=layui.$,
-        layer=layui.layer;
-        $('#addFood').on("click",function () {
+            layer=layui.layer,
+            table=layui.table;
+        table.render({
+            elem: '#food',
+            url : 'food.json',
+            // cellMinWidth : 95,
+            toolbar: '#toolbarDemo',
+            page : true,
+            // height : "full-125",
+            limit : 10,
+            limits : [10,15,20,25],
+            id : "foodListTable",
+            cols : [[
+                {type: "checkbox", fixed:"left", width:50},
+                {field: 'foodId', title: 'ID',  align:"center"},
+                {field: 'foodName', title: '菜名'},
+                {field: 'foodPrice', title: '价格', align:'center'},
+                {field: 'foodImg', title: '图片',  align:'center',templet:
+                        '<div><img style="height:35px;width:35px;" src="../../images/food.jpg" alt=""> </div>'},
+                {title: '操作', templet:'#newsListBar',fixed:"right",align:"center"}
+            ]]
+        });
+        $("#addFood").on('click',function () {
+            console.log("123");
             layer.open({
-                title : "添加菜品",
+                resize: true,
                 type : 2,
+                title:"添加菜品",
+                shadeClose: true,
                 content : "addFood.html",
-                area: ['1000px','1000px'],
-                success:function () {
-                    setTimeout(function(){
-                        layui.layer.tips('点击此处返回编辑页面', '.layui-layer-setwin .layui-layer-close', {
-                            tips: 3
-                        });
-                    },500)
-                }
+                area: ['70%','1000px'],
             })
         })
     })
