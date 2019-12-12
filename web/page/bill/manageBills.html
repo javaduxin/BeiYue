@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/web/layui/css/layui.css" media="all">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../css/reportForm.css">
+	<link rel="stylesheet" type="text/css" href="../../css/jquery.mCustomScrollbar.css">
+
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<script src="../../js/jquery-ui-1.10.4.min.js"></script>
+	<script src="../../js/jquery.mousewheel.min.js"></script>
+	<script src="../../js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="../../js/cframe.js"></script><!-- 仅供所有子页面使用 -->
 </head>
 <body>
 	
@@ -71,6 +81,115 @@
 			</div>
 		</form>
 	</script>
+
+	<div class="reportForm_main">
+		<div class="collectData">
+			<div class="layui-row">
+				<div class="layui-col-md3 br">
+					<div class="layui-col-md6">
+						<div class="title">订餐单</div>
+						<div class="nums"><font>1</font><span>笔</span></div>
+					</div>
+					<div class="layui-col-md6">
+						<div class="title">退餐单</div>
+						<div class="nums"><font>0</font><span>笔</span></div>
+					</div>
+				</div>
+				<div class="layui-col-md3 br">
+					<div class="layui-col-md6">
+						<div class="title">订餐客户数</div>
+						<div class="nums"><font>1</font></div>
+					</div>
+					<div class="layui-col-md6">
+						<div class="title">退餐客户数</div>
+						<div class="nums"><font>1</font></div>
+					</div>
+				</div>
+				<div class="layui-col-md2">
+					<div class="title">订餐金额</div>
+					<div class="nums"><font>115.20</font></div>
+				</div>
+				<div class="layui-col-md2">
+					<div class="title">退餐金额</div>
+					<div class="nums"><font>0.00</font></div>
+				</div>
+				<div class="layui-col-md2">
+					<div class="title">金额合计</div>
+					<div class="nums"><font>115.20</font></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="reportType_tj">
+			<form class="layui-form" action="">
+				<div class="layui-input-inline">
+					<select name="reportType" id="reportType" lay-filter="reportType">
+						<option value="订单数量">订单数量</option>
+						<option value="退货单数">退餐单数</option>
+						<option value="订货金额">订餐金额</option>
+						<option value="退货金额">退餐金额</option>
+						<option value="金额合计">金额合计</option>
+					</select>
+				</div>
+				<div class="layui-input-inline">
+					<a class="pressBut active" onclick="refreshData([82, 2, 91, 34, 10, 120, 20],this)">按天</a>
+					<a class="pressBut" onclick="refreshData([10, 21, 1, 134, 210, 520, 420],this)">按周</a>
+					<a class="pressBut" onclick="refreshData([82, 2, 91, 34, 10, 120, 20],this)">按月</a>
+				</div>
+				<div class="changeRate">
+					<div class="layui-col-md6 left">115.20</div>
+					<div class="layui-col-md6 right">
+						<!--上升-->
+						<!--<span class="data up">-99.42%<i class="iconfont icon-xiangshangjiantoucuxiao"></i></span>-->
+						<!--下降-->
+						<span class="data">-99.42%<i class="iconfont icon-xiangxiajiantoucuxiao"></i></span>
+						<span class="text">相比上周期</span>
+					</div>
+				</div>
+				<div id="myReport" style="width: 100%; height: 400px;"></div>
+				<script src="../../js/echarts.min.js"></script>
+				<script type="text/javascript">
+					// 基于准备好的dom，初始化echarts实例
+					var myChart = echarts.init(document.getElementById('myReport'));
+
+					// 指定图表的配置项和数据
+					var option = {
+						xAxis: {
+							type: 'category',
+							boundaryGap: false,
+							data: ['2018-03-01', '2018-03-02', '2018-03-03', '2018-03-04', '2018-03-05', '2018-03-06', '2018-03-07']
+						},
+						yAxis: {
+							type: 'value'
+						},
+						grid:{
+							top: 20,
+							bottom: 20,
+							left: 50,
+							right: 50
+						},
+						series: [{
+							data: [820, 932, 901, 934, 1290, 1330, 1320],
+							type: 'line',
+							areaStyle: {}
+						}]
+					};
+					myChart.setOption(option);
+
+					function refreshData(data,_this) {
+						$(_this).addClass("active");
+						$(_this).siblings().removeClass("active");
+						if(!myChart) {
+							return;
+						}
+						//更新数据
+						var option = myChart.getOption();
+						option.series[0].data = data;
+						myChart.setOption(option);
+					}
+				</script>
+				<br/><br/>
 	<table class="layui-hide" id="demo"></table>
 	<script type="text/html" id="barDemo">
 		<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
@@ -78,7 +197,7 @@
 		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 	</script>
 
-<script src="/web//layui/layui.all.js" charset="utf-8"></script>
+<script src="../../layui/layui.all.js" charset="utf-8"></script>
 <script type="text/javascript" src="managebill.js">
 
 </script>
